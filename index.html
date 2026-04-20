@@ -7,69 +7,103 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f5f2;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
     }
 
     header {
-      background-color: #8b0000;
-      color: white;
+      background-color: #000;
+      color: gold;
       padding: 20px;
       text-align: center;
     }
 
     nav {
-      background-color: #600000;
+      background-color: #1a1a1a;
       display: flex;
       justify-content: center;
       gap: 20px;
-      padding: 10px;
+      padding: 12px;
     }
 
     nav a {
-      color: white;
+      color: gold;
       text-decoration: none;
       font-weight: bold;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: white;
     }
 
     .hero {
       background: url('https://images.unsplash.com/photo-1555992336-03a23c6a7a6f') no-repeat center/cover;
-      height: 300px;
+      height: 350px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 2em;
-      text-shadow: 2px 2px 5px black;
+      font-size: 2.5em;
+      text-shadow: 2px 2px 8px black;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     .menu {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       margin-top: 20px;
     }
 
     .item {
-      background-color: white;
+      background-color: #222;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    .price {
+      color: gold;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      margin-top: 20px;
     }
 
     footer {
-      background-color: #8b0000;
-      color: white;
+      background-color: black;
+      color: gold;
       text-align: center;
       padding: 15px;
       margin-top: 20px;
@@ -80,42 +114,53 @@
 
 <header>
   <h1>Restaurante Delicia</h1>
-  <p>Comida deliciosa, ambiente inolvidable</p>
+  <p>Elegancia y sabor en cada plato</p>
 </header>
 
 <nav>
   <a href="#inicio">Inicio</a>
   <a href="#menu">Menú</a>
+  <a href="#nosotros">Nosotros</a>
   <a href="#contacto">Contacto</a>
 </nav>
 
 <div class="hero" id="inicio">
-  Bienvenido a tu restaurante favorito
+  Experiencia gastronómica única
 </div>
 
 <section class="section" id="menu">
-  <h2>Nuestro Menú</h2>
+  <h2>Menú</h2>
   <div class="menu">
     <div class="item">
       <h3>Pizza Artesanal</h3>
-      <p>Queso, tomate y ingredientes frescos.</p>
+      <p>Ingredientes frescos y masa casera.</p>
+      <p class="price">Bs 45</p>
     </div>
     <div class="item">
       <h3>Pasta Italiana</h3>
-      <p>Salsa casera con un toque especial.</p>
+      <p>Salsa especial de la casa.</p>
+      <p class="price">Bs 40</p>
     </div>
     <div class="item">
       <h3>Hamburguesa Gourmet</h3>
-      <p>Carne premium con pan artesanal.</p>
+      <p>Carne premium y pan artesanal.</p>
+      <p class="price">Bs 35</p>
     </div>
   </div>
+</section>
+
+<section class="section" id="nosotros">
+  <h2>Sobre Nosotros</h2>
+  <p>Somos un restaurante dedicado a ofrecer experiencias únicas con ingredientes de alta calidad y un ambiente elegante.</p>
 </section>
 
 <section class="section" id="contacto">
   <h2>Contacto</h2>
   <p>📍 La Paz, Bolivia</p>
   <p>📞 +591 12345678</p>
-  <p>📧 contacto@restaurantedelicia.com</p>
+  <a class="btn-whatsapp" href="https://wa.me/59112345678" target="_blank">Reservar por WhatsApp</a>
+
+  <iframe src="https://maps.google.com/maps?q=la%20paz%20bolivia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </section>
 
 <footer>
